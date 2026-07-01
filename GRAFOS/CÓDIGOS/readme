@@ -1,0 +1,7 @@
+Códigos
+
+Esta pasta contém os códigos-fonte utilizados no desenvolvimento do projeto de grafos.
+
+Finalidade
+
+Os arquivos armazenados nesta pasta implementam as funcionalidades necessárias para a construção e manipulação do grafo das cidades de Pernambuco, incluindo a leitura dos dados, a criação da estrutura do grafo e a execução dos algoritmos propostos.
