@@ -1,0 +1,12 @@
+Arquivos CSV
+
+Esta pasta contém os arquivos CSV utilizados na construção do grafo das cidades de Pernambuco.
+
+Arquivos
+
+D8_cidades_pe.csv: contém as conexões (arestas) entre as cidades, informando a cidade de origem (`Source`), a cidade de destino (`Target`) e a distância entre elas em quilômetros (`Distance_km`).
+D8_cidades_pe_nodes.csv: contém os vértices (nós) do grafo, incluindo o identificador da cidade (`Id`) e sua categoria (`Label`), como capital ou polo regional.
+
+Finalidade
+
+Esses arquivos servem como fonte de dados para a etapa de leitura do projeto. As informações serão carregadas pelo programa em estruturas de dados temporárias, que posteriormente serão utilizadas para a construção do grafo e para a execução dos algoritmos de busca e de caminhos mínimos.
