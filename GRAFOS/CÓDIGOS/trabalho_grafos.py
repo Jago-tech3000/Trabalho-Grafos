@@ -46,3 +46,10 @@ if __name__ == "__main__":
     caminho_minimo = reconstruir_caminho(pai_dijkstra, CIDADE_ORIGEM, CIDADE_DESTINO)
     print("Caminho:", caminho_minimo)
     print("Distância total:", distancias[CIDADE_DESTINO], "km")
+
+# 5. Componentes conexas (Pergunta 4)
+    print("\n===== COMPONENTES CONEXAS =====")
+    componentes = contar_componentes(grafo)
+    print("Quantidade de componentes:", len(componentes))
+    for indice, componente in enumerate(componentes, 1):
+        print(indice, componente)
