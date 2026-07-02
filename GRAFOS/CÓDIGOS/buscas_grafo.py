@@ -1,10 +1,7 @@
 from collections import deque
 import heapq
 
-
-# =====================================================
 # Busca em Largura (BFS)
-# =====================================================
 def bfs(grafo, inicio):
     fila = deque([inicio])
     visitados = [inicio]
@@ -34,9 +31,7 @@ def reconstruir_caminho(pai, origem, destino):
     return list(reversed(caminho))
 
 
-# =====================================================
 # Busca em Profundidade (DFS)
-# =====================================================
 def dfs(grafo, inicio=None):
     visitados = set()
     desc = {}
@@ -72,3 +67,29 @@ def dfs(grafo, inicio=None):
             visitar(vertice)
 
     return desc, fim, pais, retorno
+
+
+# Dijkstra (menor caminho com pesos)
+def dijkstra(grafo, inicio):
+  
+    dist = {v: float("inf") for v in grafo}
+    pai = {v: None for v in grafo}
+    dist[inicio] = 0
+
+    fila_prioridade = [(0, inicio)]
+
+    while fila_prioridade:
+        d_atual, u = heapq.heappop(fila_prioridade)
+
+        if d_atual != dist[u]:
+            continue  # entrada desatualizada na heap, ignora
+
+        for v, peso in grafo[u]:
+            nova_dist = d_atual + peso
+            if nova_dist < dist[v]:
+                dist[v] = nova_dist
+                pai[v] = u
+                heapq.heappush(fila_prioridade, (nova_dist, v))
+
+    return pai, dist
+    
