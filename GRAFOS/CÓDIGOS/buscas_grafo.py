@@ -121,3 +121,15 @@ def contar_componentes(grafo):
             componentes.append(componente)
 
     return componentes
+    
+# Funções de apoio para o relatório
+def maior_grau(grafo):
+    """Retorna a cidade com maior grau e o respectivo valor do grau."""
+    cidade = max(grafo, key=lambda x: len(grafo[x]))
+    return cidade, len(grafo[cidade])
+
+
+def possui_ciclo(grafo):
+    """Retorna True se o grafo possuir ao menos uma aresta de retorno (ciclo)."""
+    _desc, _fim, _pais, arestas_retorno = dfs(grafo)
+    return len(arestas_retorno) > 0
