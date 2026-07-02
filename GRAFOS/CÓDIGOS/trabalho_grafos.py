@@ -37,9 +37,6 @@ def main():
     print("Árvore DFS (pai):", pai_dfs)
     print("Arestas de retorno:", arestas_retorno)
         
-if __name__ == "__main__":
-    main()
-    
 # 4. Dijkstra (Pergunta 1: menor caminho)
     print("\n===== DIJKSTRA (menor caminho) =====")
     pai_dijkstra, distancias = dijkstra(grafo, CIDADE_ORIGEM)
@@ -53,3 +50,14 @@ if __name__ == "__main__":
     print("Quantidade de componentes:", len(componentes))
     for indice, componente in enumerate(componentes, 1):
         print(indice, componente)
+
+adição no buscas_grafos.py de 
+
+ # 6. Maior grau (Pergunta 2) e ciclos (Pergunta 3)
+    cidade_maior_grau, grau = maior_grau(grafo)
+    print("\nCidade com maior grau:", cidade_maior_grau, "-> grau", grau)
+
+    print("Possui ciclos:", "Sim" if possui_ciclo(grafo) else "Não")
+
+if __name__ == "__main__":
+    main()
