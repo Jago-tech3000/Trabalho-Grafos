@@ -11,9 +11,9 @@ CIDADE_ORIGEM = "Recife"
 CIDADE_DESTINO = "Caruaru"
 
 def main():
-    # ---------------------------------------------------
+    
     # 1. Carregamento do grafo
-    # ---------------------------------------------------
+    
     grafo = carregar_grafo(ARQUIVO_NOS, ARQUIVO_ARESTAS)
 
     print("===== LISTA DE ADJACÊNCIA =====")
@@ -22,6 +22,20 @@ def main():
 
     estatisticas_grafo(grafo)
 
+    # 2. BFS
+
+    print("\n===== BFS =====")
+    pai_bfs = bfs(grafo, CIDADE_ORIGEM)
+    for cidade in pai_bfs:
+        print(cidade, "<-", pai_bfs[cidade])
+
+    # 3. DFS (Pergunta 6: árvore DFS e tempos)
+    print("\n===== DFS =====")
+    descoberta, finalizacao, pai_dfs, arestas_retorno = dfs(grafo, CIDADE_ORIGEM)
+    print("Tempos de descoberta:", descoberta)
+    print("Tempos de finalização:", finalizacao)
+    print("Árvore DFS (pai):", pai_dfs)
+    print("Arestas de retorno:", arestas_retorno)
         
 if __name__ == "__main__":
     main()
