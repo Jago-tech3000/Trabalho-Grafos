@@ -93,3 +93,31 @@ def dijkstra(grafo, inicio):
 
     return pai, dist
     
+# Componentes conexas
+
+def contar_componentes(grafo):
+    """
+    Identifica as componentes conexas do grafo usando busca em largura.
+    Retorna a lista de componentes (cada componente é uma lista de cidades).
+    A quantidade de componentes é simplesmente len(retorno).
+    """
+    visitados = []
+    componentes = []
+
+    for vertice in grafo:
+        if vertice not in visitados:
+            componente = []
+            fila = deque([vertice])
+            visitados.append(vertice)
+
+            while fila:
+                u = fila.popleft()
+                componente.append(u)
+                for v, _peso in grafo[u]:
+                    if v not in visitados:
+                        visitados.append(v)
+                        fila.append(v)
+
+            componentes.append(componente)
+
+    return componentes
