@@ -39,3 +39,10 @@ def main():
         
 if __name__ == "__main__":
     main()
+    
+# 4. Dijkstra (Pergunta 1: menor caminho)
+    print("\n===== DIJKSTRA (menor caminho) =====")
+    pai_dijkstra, distancias = dijkstra(grafo, CIDADE_ORIGEM)
+    caminho_minimo = reconstruir_caminho(pai_dijkstra, CIDADE_ORIGEM, CIDADE_DESTINO)
+    print("Caminho:", caminho_minimo)
+    print("Distância total:", distancias[CIDADE_DESTINO], "km")
